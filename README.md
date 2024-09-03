@@ -21,3 +21,7 @@
 
 ### 7. Run the application using Django 
 ### Ex: python manange.py runserver 
+
+
+# You should see the server is running and go to the local URL to check the web page. 
+![image](https://github.com/user-attachments/assets/504aaf7d-7fa2-47ea-98d4-01d7776ebac4)
