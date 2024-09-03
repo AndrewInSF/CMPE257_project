@@ -1,0 +1,86 @@
+<form method="post" action="{% url 'home' %}?type=predict">
+  {% csrf_token %}
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Heart Rate</th>
+        <th scope="col">Diastolic Pressure</th>
+        <th scope="col">HRV</th>
+      </tr>
+      <tr>
+        <th scope="col">
+          <input type="text" name="heartRate" value="{{ request.POST.heartRate|default:60 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="diagPress" value="{{ request.POST.diagPress|default:86 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="HRV" value="{{ request.POST.HRV|default:0.121033 }}">
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Respiratory Rate</th>
+        <th scope="col">Age</th>
+        <th scope="col">Pulse Pressure</th>
+      </tr>
+      <tr>
+        <th scope="col">
+          <input type="text" name="respRate" value="{{ request.POST.respRate|default:12 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="age" value="{{ request.POST.age|default:37 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="pulsePress" value="{{ request.POST.pulsePress|default:38 }}">
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Oxygen Saturation</th>
+        <th scope="col">Weight</th>
+        <th scope="col">MAP</th>
+      </tr>
+      <tr>
+        <th scope="col">
+          <input type="text" name="oxySat" value="{{ request.POST.oxySat|default:95.702046 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="weight" value="{{ request.POST.weight|default:91.541628 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="map" value="{{ request.POST.map|default:98.666667 }}">
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Sys Blood Pressure</th>
+        <th scope="col">Height</th>
+        <th scope="col">BMI</th>
+      </tr>
+      <tr>
+        <th scope="col">
+          <input type="text" name="sysBloodPress" value="{{ request.POST.sysBloodPress|default:124 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="height" value="{{ request.POST.height|default:1.679351 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="BMI" value="{{ request.POST.BMI|default:32.459031 }}">
+        </th>
+      </tr>
+      <tr>
+        <th scope="col">Body Temp</th>
+        <th scope="col">Gender (0: woman 1: man)</th>
+      </tr>
+      <tr>
+        <th scope="col">
+          <input type="text" name="bodyTemp" value="{{ request.POST.bodyTemp|default:36.861707 }}">
+        </th>
+        <th scope="col">
+          <input type="text" name="gender" value="{{ request.POST.gender|default:0 }}">
+        </th>
+      </tr>
+    </thead>
+  </table>
+  <div class="text-center mt-5">
+    <button type="submit" class="btn btn-primary">Predict</button>
+  </div>
+</form>
